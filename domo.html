@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery domo </title>
+</head>
+<body>
+
+<h4>Example </h4>
+
+<form id="form">
+    Name:<br/>
+    <input type="text" name="name"><br/>
+    Sex:<br/>
+    <input type="radio" name="sex" value="W"> Women  <input type="radio" name="sex" value="M"> Man <br/>
+    Favorite:<br/>
+    <input type="checkbox" name="favorite" value="sport"> Sport  <input type="checkbox" name="favorite" value="coding"> Coding <input type="checkbox" name="favorite" value="travel">  Travel <br/>
+    City:<br/>
+    <select name="city">
+        <option value="beijing">Bei Jing</option>
+        <option value="shenzhen">Shen Zhen</option>
+        <option value="hangzhou">Hang Zhou</option>
+    </select><br/>
+    Mood:<br/>
+    <textarea name="mood"></textarea>
+
+</form>
+
+
+<h4>Test  data </h4>
+<textarea id="data" rows="15" cols="40">
+    {
+    "name": "wens",
+    "sex": "M",
+    "favorite": [
+        "sport",
+        "travel"
+    ],
+    "city": "beijing",
+    "mood": "Good Time"
+}
+</textarea>
+<br/>
+<button id="button" type="button" >Fill The Form</button>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.form.value.js"></script>
+<script>
+
+    $(function(){
+        $("#button").click(function(){
+            var dataObj  = JSON.parse($("#data").val().trim());
+            $("#form").fillValue(dataObj);
+
+        });
+    }) ;
+
+</script>
+
+</body>
+</html>
