@@ -26,7 +26,7 @@
     function setRadio(ele, value) {
         $(ele).attr("checked", false).each(function (i, e) {
             if ($(e).val() == value) {
-                $(e).attr("checked", true);
+                $(e).prop("checked", true);
             }
         });
 
@@ -36,7 +36,7 @@
         $(ele).attr("checked", false).each(function (i, e) {
             $(value).each(function (ii, ee) {
                 if ($(e).val() == ee) {
-                    $(e).attr("checked", true);
+                    $(e).prop("checked", true);
                 }
             });
         });
